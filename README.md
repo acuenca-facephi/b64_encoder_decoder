@@ -20,3 +20,12 @@ Now you can execute b64ed -h
 
 Now you can execute b64ed -h
 
+## Usage
+`base64ed [-f | -e | -d | -h | help | man] [stringFile]`
+* -f -> Encode file in base64. If you use this option, it is recommended to use `pbcopy` due to large result:
+  * `base64ed -f /path/to/file | pbcopy`: Encode file and copy it to clipboard.
+* -e -> Encode string in base64.
+* -d -> Decode base64 string.
+* -h/help/man -> Print this help.
+* stringFile -> String or path to encode/decode. Mandatory with -e/d/f options.
+
