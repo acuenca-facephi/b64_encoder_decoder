@@ -1,4 +1,6 @@
 @echo off
+REM TODO: Append the doskey to existing AutoRun instead overwritting.
+
 ECHO Installing Base64 Encoder/Decoder...
 SET parent=%~dp0
 FOR %%a IN ("%parent:~0,-1%") DO SET grandparent=%%~dpa
