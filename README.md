@@ -20,6 +20,11 @@ Now you can execute b64ed -h
 
 Now you can execute b64ed -h
 
+### Windows
+1. Run .windows\alias.bat file **_as ADMIN_** from CMD or Windows file explorer.
+
+Now you can execute b64ed -h
+
 ## Usage
 `base64ed [-f | -e | -d | -h | help | man] [stringFile]`
 * -f -> Encode file in base64. If you use this option, it is recommended to use `pbcopy` due to large result:

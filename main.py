@@ -4,7 +4,7 @@ from typing import List
 
 
 def app_help():
-    return 'usage: ./main.py [-f | -e | -d | -h | help | man] [stringFile]\n' \
+    return 'usage: b64ed [-f | -e | -d | -h | help | man] [stringFile]\n' \
            '\t-f -> Encode file in base64. If you use this option, it is recommended\n' \
            '\t      to use `pbcopy` due to large result:\n' \
            '\t\t    example: base64ed -f /path/to/file | pbcopy\n' \
@@ -23,6 +23,7 @@ def main():
             data: bytes
             if arguments[1] == '-f':
                 # TODO catch open/read file errors
+                # TODO extract file image from base64 file/text
                 print(base64.b64encode(open(arguments[2], "rb").read()).decode('utf-8'))
             if arguments[1] == '-e':
                 print(base64.encodebytes(bytes(arguments[2], encoding='utf8')).decode('utf-8"'))
