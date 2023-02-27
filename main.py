@@ -20,15 +20,16 @@ def main():
         if arguments[1] in ['-h', 'help', 'man']:
             print(app_help())
         elif arguments[1] in ['-f', '-e', '-d'] and len(arguments) > 2:
-            data: bytes
+            result: str
             if arguments[1] == '-f':
                 # TODO catch open/read file errors
                 # TODO extract file image from base64 file/text
-                print(base64.b64encode(open(arguments[2], "rb").read()).decode('utf-8'))
-            if arguments[1] == '-e':
-                print(base64.encodebytes(bytes(arguments[2], encoding='utf8')).decode('utf-8"'))
-            if arguments[1] == '-d':
-                print(base64.decodebytes(bytes(arguments[2], encoding='utf8')).decode('utf-8'))
+                result = base64.b64encode(open(arguments[2], "rb").read()).decode('utf-8')
+            elif arguments[1] == '-e':
+                result = base64.encodebytes(bytes(arguments[2], encoding='utf8')).decode('utf-8"')
+            else:
+                result = base64.decodebytes(bytes(arguments[2], encoding='utf8')).decode('utf-8')
+            print(result.replace('\n', ''), end='')
         else:
             print(f'ERROR -> Invalid arguments.\n{app_help()}')
     else:
